@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservation</title>
+    <style>
+        /* 이전 스타일 유지 */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000000, #2c3e50, #2c3e50);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(28, 28, 28, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            color: #ffffff;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-method {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(145deg, #2c3e50, #1a252f);
+            border-radius: 15px;
+            min-width: 250px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+        }
+
+        .online-link {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .online-link:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        button {
+            padding: 15px 40px;
+            margin: 10px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(145deg, #34495e, #2c3e50);
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        button:hover {
+            background: linear-gradient(145deg, #2c3e50, #34495e);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .back-button {
+            background: linear-gradient(145deg, #1a252f, #2c3e50);
+            margin-bottom: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+            .contact-method {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="window.location.href='index.html'" class="back-button">← Back to Main Menu</button>
+
+        <!-- 한국어 섹션 -->
+        <div id="ko" class="content hidden">
+            <h1>예약 안내</h1>
+            <div class="contact-info">
+                <div class="contact-method">
+                    <h2>전화 예약</h2>
+                    <p>예약 센터: 02-6926-4099</p>
+                    <p>운영시간: 09:00 - 18:00</p>
+                </div>
+                <div class="contact-method">
+                    <h2>온라인 예약</h2>
+                    <p>아래 링크를 클릭하시면</p>
+                    <p>예약 페이지로 이동합니다</p>
+                    <p><a href="https://ninetreehotels.com/nth4/" target="_blank" class="online-link">예약하기</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 영어 섹션 -->
+        <div id="en" class="content hidden">
+            <h1>Reservation Information</h1>
+            <div class="contact-info">
+                <div class="contact-method">
+                    <h2>Phone Reservation</h2>
+                    <p>Booking Center: +82-2-6926-4099</p>
+                    <p>Hours: 09:00 - 18:00</p>
+                </div>
+                <div class="contact-method">
+                    <h2>Online Booking</h2>
+                    <p>Click the link below</p>
+                    <p>to make a reservation</p>
+                    <p><a href="https://ninetreehotels.com/nth4/" target="_blank" class="online-link">Book Now</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 일본어 섹션 -->
+        <div id="ja" class="content hidden">
+            <h1>予約案内</h1>
+            <div class="contact-info">
+                <div class="contact-method">
+                    <h2>電話予約</h2>
+                    <p>予約センター: +82-2-6926-4099</p>
+                    <p>営業時間: 09:00 - 18:00</p>
+                </div>
+                <div class="contact-method">
+                    <h2>オンライン予約</h2>
+                    <p>下のリンクをクリックすると</p>
+                    <p>予約ページに移動します</p>
+                    <p><a href="https://ninetreehotels.com/nth4/" target="_blank" class="online-link">予約する</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 중국어 섹션 추가 -->
+        <div id="zh" class="content hidden">
+            <h1>预订信息</h1>
+            <div class="contact-info">
+                <div class="contact-method">
+                    <h2>电话预订</h2>
+                    <p>预订中心: +82-2-6926-4099</p>
+                    <p>服务时间: 09:00 - 18:00</p>
+                </div>
+                <div class="contact-method">
+                    <h2>在线预订</h2>
+                    <p>点击以下链接</p>
+                    <p>跳转至预订页面</p>
+                    <p><a href="https://ninetreehotels.com/nth4/" target="_blank" class="online-link">立即预订</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // URL에서 언어 파라미터 가져오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const language = urlParams.get('lang') || 'ko';
+
+        // 해당 언어 컨텐츠 표시
+        document.querySelectorAll('.content').forEach(el => el.classList.add('hidden'));
+        document.getElementById(language).classList.remove('hidden');
+    </script>
+</body>
+</html>

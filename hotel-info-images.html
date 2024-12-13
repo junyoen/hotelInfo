@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Information</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000000, #2c3e50, #2c3e50);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(28, 28, 28, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            color: #ffffff;
+        }
+
+        .back-button {
+            padding: 15px 40px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(145deg, #1a252f, #2c3e50);
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .language-buttons {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .lang-button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #34495e, #2c3e50);
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .lang-button:hover, .back-button:hover {
+            background: linear-gradient(145deg, #2c3e50, #34495e);
+            transform: translateY(-2px);
+        }
+
+        .lang-button.active {
+            background: linear-gradient(145deg, #3498db, #2980b9);
+        }
+
+        .image-container {
+            width: 100%;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .info-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: none;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .info-image.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 15px;
+            }
+            
+            .language-buttons {
+                gap: 10px;
+            }
+            
+            .lang-button {
+                padding: 10px 20px;
+                font-size: 14px;
+                min-width: calc(50% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="window.location.href='index.html'" class="back-button">← Back to Main Menu</button>
+        
+        <div class="language-buttons">
+            <button class="lang-button" onclick="changeLanguage('ko')" data-lang="ko">한국어</button>
+            <button class="lang-button" onclick="changeLanguage('en')" data-lang="en">English</button>
+            <button class="lang-button" onclick="changeLanguage('ja')" data-lang="ja">日本語</button>
+            <button class="lang-button" onclick="changeLanguage('zh')" data-lang="zh">中文</button>
+        </div>
+
+        <div class="image-container">
+            <img id="ko" class="info-image" src="https://raw.githubusercontent.com/junyoen/hotel-info/main/hotel-info-ko.png" alt="호텔 안내 한국어">
+            <img id="en" class="info-image" src="https://raw.githubusercontent.com/junyoen/hotel-info/main/hotel-info-en.png" alt="Hotel Information English">
+            <img id="ja" class="info-image" src="https://raw.githubusercontent.com/junyoen/hotel-info/main/hotel-info-ja.png" alt="ホテル案内 日本語">
+            <img id="zh" class="info-image" src="https://raw.githubusercontent.com/junyoen/hotel-info/main/hotel-info-zh.png" alt="酒店信息 中文">
+        </div>
+    </div>
+
+    <script>
+        function changeLanguage(lang) {
+            // 모든 이미지 숨기기
+            document.querySelectorAll('.info-image').forEach(img => {
+                img.classList.remove('active');
+            });
+            
+            // 선택된 언어의 이미지만 표시
+            document.getElementById(lang).classList.add('active');
+            
+            // 버튼 스타일 변경
+            document.querySelectorAll('.lang-button').forEach(button => {
+                button.classList.remove('active');
+                if (button.dataset.lang === lang) {
+                    button.classList.add('active');
+                }
+            });
+
+            // URL 파라미터 업데이트
+            const newUrl = new URL(window.location.href);
+            newUrl.searchParams.set('lang', lang);
+            window.history.pushState({}, '', newUrl);
+        }
+
+        // 초기 언어 설정
+        const urlParams = new URLSearchParams(window.location.search);
+        const initialLang = urlParams.get('lang') || 'ko';
+        changeLanguage(initialLang);
+    </script>
+</body>
+</html>
