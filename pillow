@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillow Menu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000000, #2c3e50, #2c3e50);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(28, 28, 28, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            color: #ffffff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .pillow-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .pillow-item {
+            background: linear-gradient(145deg, #2c3e50, #1a252f);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pillow-type {
+            font-size: 1.1em;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+
+        .pillow-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .pillow-description {
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        .back-button {
+            padding: 15px 40px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(145deg, #1a252f, #2c3e50);
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(145deg, #2c3e50, #34495e);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            .pillow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+            .pillow-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="window.location.href='index.html'" class="back-button">← Back to Main Menu</button>
+
+<!-- 한국어 섹션 -->
+<div id="ko" class="content hidden">
+    <h1>베개 메뉴</h1>
+    <div class="pillow-grid">
+        <div class="pillow-item">
+            <div class="pillow-type">편백 베개(HARD)</div>
+            <div class="pillow-name">HINOKI CYPRESS PILLOW</div>
+            <div class="pillow-description">향균, 스트레스 완화에 뛰어나 편백나무의 좋은 성분을 담았습니다.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">바이오칩 베개(HARD)</div>
+            <div class="pillow-name">BIOCHIP PILLOW</div>
+            <div class="pillow-description">통증이 절되어 머리를 시원하게 유지합니다.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">쌀겨 베개(HARD)</div>
+            <div class="pillow-name">RICE BRAN PILLOW</div>
+            <div class="pillow-description">한국 전통 베개로 목의 통증으로 부드러운 베개를 사용할 수 없는 분들에게 좋습니다.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">깃털 베개(SOFT)</div>
+            <div class="pillow-name">FEATHER PILLOW</div>
+            <div class="pillow-description">오리털을 사용한 깃털 기본 세팅 베개</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">솜 베개(SOFT)</div>
+            <div class="pillow-name">MICROFIBER PILLOW</div>
+            <div class="pillow-description">극세사 솜을 사용하여 감촉이 부드럽고, Non-Allergy 처리로 항균성이 우수합니다.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">기절 베개(SOFT)</div>
+            <div class="pillow-name">MICRO-AIR BALL PILLOW</div>
+            <div class="pillow-description">에어볼이라는 신소재를 사용해 개인별 인체에 맞는 수면 자세를 만들어줍니다.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">메밀 베개(NORMAL)</div>
+            <div class="pillow-name">BUCKWHEAT PILLOW</div>
+            <div class="pillow-description">메밀껍질로 속을 채운 한국 전통 베개로 머리와 목을 시원하게 하고 스트레스를 완화시킵니다.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">마그네틱 베개(NORMAL)</div>
+            <div class="pillow-name">MAGNETIC PILLOW</div>
+            <div class="pillow-description">피부의 자극을 줄여주고, 혈면증과 피로 해소에 도움이 됩니다.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">폼 베개(NORMAL)</div>
+            <div class="pillow-name">FOAM PILLOW</div>
+            <div class="pillow-description">긴장된 목과 어깨 부분의 긴장완화를 돕습니다.</div>
+        </div>
+    </div>
+</div>
+
+<!-- 영어 섹션 -->
+<div id="en" class="content hidden">
+    <h1>Pillow Menu</h1>
+    <div class="pillow-grid">
+        <div class="pillow-item">
+            <div class="pillow-type">Hinoki Cypress(HARD)</div>
+            <div class="pillow-name">HINOKI CYPRESS PILLOW</div>
+            <div class="pillow-description">Contains beneficial compounds from cypress trees, excellent for antibacterial properties and stress relief.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">Biochip(HARD)</div>
+            <div class="pillow-name">BIOCHIP PILLOW</div>
+            <div class="pillow-description">Helps maintain a cool head and reduces pain.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">Rice Bran(HARD)</div>
+            <div class="pillow-name">RICE BRAN PILLOW</div>
+            <div class="pillow-description">Traditional Korean pillow, suitable for those who need firm support due to neck pain.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">Feather(SOFT)</div>
+            <div class="pillow-name">FEATHER PILLOW</div>
+            <div class="pillow-description">Standard duck feather pillow for soft comfort.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">Microfiber(SOFT)</div>
+            <div class="pillow-name">MICROFIBER PILLOW</div>
+            <div class="pillow-description">Made with ultra-fine fiber, soft to touch and non-allergenic with antibacterial properties.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">Micro-air Ball(SOFT)</div>
+            <div class="pillow-name">MICRO-AIR BALL PILLOW</div>
+            <div class="pillow-description">Uses innovative air ball material to create personalized sleeping posture.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">Buckwheat(NORMAL)</div>
+            <div class="pillow-name">BUCKWHEAT PILLOW</div>
+            <div class="pillow-description">Traditional Korean pillow filled with buckwheat hulls, helps cool the head and neck while reducing stress.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">Magnetic(NORMAL)</div>
+            <div class="pillow-name">MAGNETIC PILLOW</div>
+            <div class="pillow-description">Reduces skin irritation and helps with insomnia and fatigue relief.</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">Foam(NORMAL)</div>
+            <div class="pillow-name">FOAM PILLOW</div>
+            <div class="pillow-description">Helps relieve tension in the neck and shoulder areas.</div>
+        </div>
+    </div>
+</div>
+
+<!-- 일본어 섹션 -->
+<div id="ja" class="content hidden">
+    <h1>枕メニュー</h1>
+    <div class="pillow-grid">
+        <div class="pillow-item">
+            <div class="pillow-type">檜枕(HARD)</div>
+            <div class="pillow-name">HINOKI CYPRESS PILLOW</div>
+            <div class="pillow-description">抗菌作用とストレス緩和に優れた、檜の良い成分を含んでいます。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">バイオチップ枕(HARD)</div>
+            <div class="pillow-name">BIOCHIP PILLOW</div>
+            <div class="pillow-description">頭を涼しく保ち、痛みを和らげます。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">米糠枕(HARD)</div>
+            <div class="pillow-name">RICE BRAN PILLOW</div>
+            <div class="pillow-description">韓国の伝統的な枕で、首の痛みにより柔らかい枕が使えない方に適しています。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">羽毛枕(SOFT)</div>
+            <div class="pillow-name">FEATHER PILLOW</div>
+            <div class="pillow-description">アヒルの羽毛を使用した標準的な枕です。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">マイクロファイバー枕(SOFT)</div>
+            <div class="pillow-name">MICROFIBER PILLOW</div>
+            <div class="pillow-description">極細繊維を使用し、触り心地が柔らかく、アレルギー対策済みで抗菌性に優れています。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">マイクロエアボール枕(SOFT)</div>
+            <div class="pillow-name">MICRO-AIR BALL PILLOW</div>
+            <div class="pillow-description">エアボールという新素材を使用し、個人に合わせた睡眠姿勢を作ります。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">そば殻枕(NORMAL)</div>
+            <div class="pillow-name">BUCKWHEAT PILLOW</div>
+            <div class="pillow-description">そば殻を詰めた韓国の伝統的な枕で、頭と首を涼しく保ち、ストレスを軽減します。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">磁気枕(NORMAL)</div>
+            <div class="pillow-name">MAGNETIC PILLOW</div>
+            <div class="pillow-description">肌への刺激を減らし、不眠症と疲労回復に役立ちます。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">フォーム枕(NORMAL)</div>
+            <div class="pillow-name">FOAM PILLOW</div>
+            <div class="pillow-description">首と肩の緊張を緩和します。</div>
+        </div>
+    </div>
+</div>
+
+<!-- 일본어 섹션 -->
+<div id="ja" class="content hidden">
+    <h1>枕メニュー</h1>
+    <div class="pillow-grid">
+        <div class="pillow-item">
+            <div class="pillow-type">檜枕(HARD)</div>
+            <div class="pillow-name">HINOKI CYPRESS PILLOW</div>
+            <div class="pillow-description">抗菌作用とストレス緩和に優れた、檜の良い成分を含んでいます。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">バイオチップ枕(HARD)</div>
+            <div class="pillow-name">BIOCHIP PILLOW</div>
+            <div class="pillow-description">頭を涼しく保ち、痛みを和らげます。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">米糠枕(HARD)</div>
+            <div class="pillow-name">RICE BRAN PILLOW</div>
+            <div class="pillow-description">韓国の伝統的な枕で、首の痛みにより柔らかい枕が使えない方に適しています。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">羽毛枕(SOFT)</div>
+            <div class="pillow-name">FEATHER PILLOW</div>
+            <div class="pillow-description">アヒルの羽毛を使用した標準的な枕です。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">マイクロファイバー枕(SOFT)</div>
+            <div class="pillow-name">MICROFIBER PILLOW</div>
+            <div class="pillow-description">極細繊維を使用し、触り心地が柔らかく、アレルギー対策済みで抗菌性に優れています。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">マイクロエアボール枕(SOFT)</div>
+            <div class="pillow-name">MICRO-AIR BALL PILLOW</div>
+            <div class="pillow-description">エアボールという新素材を使用し、個人に合わせた睡眠姿勢を作ります。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">そば殻枕(NORMAL)</div>
+            <div class="pillow-name">BUCKWHEAT PILLOW</div>
+            <div class="pillow-description">そば殻を詰めた韓国の伝統的な枕で、頭と首を涼しく保ち、ストレスを軽減します。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">磁気枕(NORMAL)</div>
+            <div class="pillow-name">MAGNETIC PILLOW</div>
+            <div class="pillow-description">肌への刺激を減らし、不眠症と疲労回復に役立ちます。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">フォーム枕(NORMAL)</div>
+            <div class="pillow-name">FOAM PILLOW</div>
+            <div class="pillow-description">首と肩の緊張を緩和します。</div>
+        </div>
+    </div>
+</div>
+
+<!-- 중국어 섹션 -->
+<div id="zh" class="content hidden">
+    <h1>枕头菜单</h1>
+    <div class="pillow-grid">
+        <div class="pillow-item">
+            <div class="pillow-type">扁柏枕(HARD)</div>
+            <div class="pillow-name">HINOKI CYPRESS PILLOW</div>
+            <div class="pillow-description">含有扁柏树的优质成分，具有出色的抗菌和缓解压力的效果。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">生物芯片枕(HARD)</div>
+            <div class="pillow-name">BIOCHIP PILLOW</div>
+            <div class="pillow-description">帮助保持头部清凉，减轻疼痛。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">米糠枕(HARD)</div>
+            <div class="pillow-name">RICE BRAN PILLOW</div>
+            <div class="pillow-description">韩国传统枕头，适合因颈部疼痛而无法使用柔软枕头的人。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">羽毛枕(SOFT)</div>
+            <div class="pillow-name">FEATHER PILLOW</div>
+            <div class="pillow-description">使用鸭毛制成的标准枕头。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">超细纤维枕(SOFT)</div>
+            <div class="pillow-name">MICROFIBER PILLOW</div>
+            <div class="pillow-description">使用超细纤维，触感柔软，经过防过敏处理，具有优秀的抗菌性。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">微气球枕(SOFT)</div>
+            <div class="pillow-name">MICRO-AIR BALL PILLOW</div>
+            <div class="pillow-description">使用称为气球的新材料，可以根据个人体型创造适合的睡眠姿势。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">荞麦枕(NORMAL)</div>
+            <div class="pillow-name">BUCKWHEAT PILLOW</div>
+            <div class="pillow-description">韩国传统枕头，内填荞麦壳，可以让头部和颈部保持凉爽，缓解压力。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">磁疗枕(NORMAL)</div>
+            <div class="pillow-name">MAGNETIC PILLOW</div>
+            <div class="pillow-description">减少皮肤刺激，有助于改善失眠和疲劳。</div>
+        </div>
+
+        <div class="pillow-item">
+            <div class="pillow-type">泡沫枕(NORMAL)</div>
+            <div class="pillow-name">FOAM PILLOW</div>
+            <div class="pillow-description">帮助缓解颈部和肩部的紧张。</div>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    <script>
+        // URL에서 언어 파라미터 가져오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const language = urlParams.get('lang') || 'ko';
+
+        // 해당 언어 컨텐츠 표시
+        document.querySelectorAll('.content').forEach(el => el.classList.add('hidden'));
+        document.getElementById(language).classList.remove('hidden');
+    </script>
+</body>
+</html>
